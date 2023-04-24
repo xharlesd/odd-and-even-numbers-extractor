@@ -16,12 +16,11 @@ with open("numbers.txt", 'r') as input_file, open("even.txt", 'w') as output_eve
         #  if the extracted number is even
         if extracted_number % 2 == 0:  
             
-            # write to even.txt
+            # even numbers will be written to even.txt
             output_even.write(str(extracted_number)+ "\n")
             
         #  if the extracted number is odd
-        if extracted_number % 2 == 1: 
+        elif extracted_number % 2 == 1: 
 
-            """
-            #  write to odd.txt
-            """
+            # odd numbers will be written to odd.txt
+            output_odd.write(str(extracted_number)+ "\n")
