@@ -6,11 +6,10 @@
 # open numbers.txt (read), even.txt(write), odd.txt(write)
 with open("numbers.txt", 'r') as input_file, open("even.txt", 'w') as output_even,  open("odd.txt", 'w') as output_odd:
     
-    # read numbers.txt line by line
-    for line in input_file:
-        
+    for line in input_file:  # read numbers.txt line by line
+        extract_number = int(line)  #  each line
+
         """
-        #  each line
         #  if even,
             # write to even.txt
         #  if odd,
