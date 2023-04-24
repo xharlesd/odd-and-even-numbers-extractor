@@ -7,11 +7,12 @@
 with open("numbers.txt", 'r') as input_file, open("even.txt", 'w') as output_even,  open("odd.txt", 'w') as output_odd:
     
     for line in input_file:  # read numbers.txt line by line
-        extract_number = int(line)  #  each line
+        extracted_number = int(line)  #  convert each line from numbers.txt into integer
 
-        """
-        #  if even,
+        if extracted_number % 2 == 0:  #  if the extracted no. is even
+
+            """
             # write to even.txt
         #  if odd,
             #  write to odd.txt
-        """
+            """ 
