@@ -9,18 +9,23 @@ with open("numbers.txt", 'r') as input_file, open("even.txt", 'w') as output_eve
     
     # read numbers.txt line by line
     for line in input_file:  
+        
+        try:
+            # convert each line from numbers.txt into integer
+            extracted_number = int(line)  
 
-        #  convert each line from numbers.txt into integer
-        extracted_number = int(line)  
+            # if the extracted number is even
+            if extracted_number % 2 == 0:  
+                
+                # even numbers will be written to even.txt
+                output_even.write(str(extracted_number)+ "\n")
+                
+            # else if the extracted number is odd
+            elif extracted_number % 2 == 1: 
 
-        #  if the extracted number is even
-        if extracted_number % 2 == 0:  
-            
-            # even numbers will be written to even.txt
-            output_even.write(str(extracted_number)+ "\n")
-            
-        #  if the extracted number is odd
-        elif extracted_number % 2 == 1: 
+                # odd numbers will be written to odd.txt
+                output_odd.write(str(extracted_number)+ "\n")
 
-            # odd numbers will be written to odd.txt
-            output_odd.write(str(extracted_number)+ "\n")
+        # Value error
+        except:
+            print("WARNING! One of the data from number.txt is neither odd nor even number.")
