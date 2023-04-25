@@ -5,9 +5,12 @@
 
 # open numbers.txt (write)
 with open("numbers.txt", 'w') as input_file1:        
-    """"""
-# the user will input numbers
-# user input will be written to numbers.txt
+    # the user will input numbers
+    user_input = input("Input number: ")
+
+    # user input will be written to numbers.txt
+
+
 
 # open numbers.txt (read), even.txt(write), odd.txt(write)
 with open("numbers.txt", 'r') as input_file2, open("even.txt", 'w+') as output_even,  open("odd.txt", 'w') as output_odd:
