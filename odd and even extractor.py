@@ -10,7 +10,7 @@ from colorama import Fore, Style
 def intro():
     # Use pyfiglet formatting to Assignment # 4"
     print("")
-    lab = pyfiglet.figlet_format("ASSIGNMENT # 4", font = "banner3-d", width = 130, justify = "center")
+    lab = pyfiglet.figlet_format("ODD & EVEN NO.", font = "banner3-d", width = 130, justify = "center")
     print(Style.BRIGHT + Fore.CYAN + lab)
 
     # format introductory message
@@ -31,16 +31,19 @@ def user_input():
         while True:
             try:
                 # the user will input numbers
-                user_input = int(input(Fore.CYAN + "\033[1m\t\tEnter a Number:  \033[0m"  + Fore.YELLOW))
+                user_input = int(input(Fore.CYAN + "\033[1m\t\t\tEnter a Number:  \033[0m"  + Fore.YELLOW))
 
                 # user should only input whole numbers
                 if user_input >= 0:
                     # user input will be written to numbers.txt
                     input_file1.write(str(user_input) + '\n')
                     continue
+                if type(user_input) == float:
+                    print("We do not accept float")
+                    continue
             except:
                 # If the user any letter to stop the program
-                print(Fore.GREEN + "\n\t\t[Extracting odd and even numbers.........]")
+                print(Fore.GREEN + "\n\t\t\t[Extracting odd and even numbers.........]")
                 time.sleep(3)
                 break
 
@@ -69,23 +72,37 @@ def display():
             # print list of numbers from numbers.txt
             lst_numbers = [int(line) for line in input_file3.read().split()]
             lst_numbers.sort()
-            print(Fore.YELLOW + "\033[1m\n\t\tNumbers:       \033[0m" + Fore.YELLOW, lst_numbers)
+            print(Fore.YELLOW + "\033[1m\n\n\t\t\tNUMBERS:       \033[0m" + Fore.CYAN, lst_numbers)
 
             # print list of even numbers
             lst_even = [int(line) for line in output_even2.read().split()]
             lst_even.sort()
-            print(Fore.YELLOW + "\033[1m\t\tEven Numbers:  \033[0m" + Fore.YELLOW, lst_even)
+            print(Fore.YELLOW + "\033[1m\t\t\tEVEN NUMBERS:  \033[0m" + Fore.CYAN, lst_even)
             
             # print list of odd numbers
             lst_odd = [int(line) for line in output_odd2.read().split()]
             lst_odd.sort()
-            print(Fore.YELLOW + "\033[1m\t\tOdd Numbers:   \033[0m" + Fore.YELLOW, lst_odd, "\n")
+            print(Fore.YELLOW + "\033[1m\t\t\tODD NUMBERS:   \033[0m" + Fore.CYAN, lst_odd, "\n")
+
+def outro():
+    time.sleep(3.5)
+    print(Fore.GREEN + "\n\t\t\t[Program will be terminated..............] \n")
+    time.sleep(2)
+    
+    print("\033[0;34m" + "\033[1m-" * 130 + '\033[0m')
+    print(" ")
+    lab = pyfiglet.figlet_format("   THANK YOU!   ", font = "banner3",  width = 130, justify = "center")
+    print(Style.BRIGHT + Fore.CYAN + lab)
+    exit()
+
 
 # start
 intro()
 user_input()
 main()
 display()
+outro()
+
 
 
 
