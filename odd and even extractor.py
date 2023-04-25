@@ -9,7 +9,7 @@ def user_input():
     # open numbers.txt (write)
     with open("numbers.txt", 'w') as input_file1:   
 
-        print("Please type 0 as your first number. Type any letter to stop.")     
+        print("INSTRUCTION: Please type 0 as your first number. Type any letter to stop.")     
 
         while True:
             try:
@@ -24,7 +24,7 @@ def user_input():
 
             except:
                 # If the user any letter to stop the program
-                print("\nExtracting odd and even numbers....")
+                print("\n\tExtracting odd and even numbers....")
                 time.sleep(3)
                 break
 
@@ -41,7 +41,7 @@ def main():
             # print list of numbers from numbers.txt
             lst = [int(line) for line in input_file2.read().split()]
             lst.sort()
-            print("Numbers: ", lst)
+            print("\tNumbers: ", lst)
 
             # if the extracted number is even
             if extracted_number % 2 == 0:  
