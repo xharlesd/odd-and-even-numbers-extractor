@@ -4,6 +4,8 @@
 # Then, the even and odd numbers will be extracted from the text file and will be transferred to separate files.
 
 # open numbers.txt (write)
+with open("numbers.txt", 'w') as input_file1:        
+    """"""
 # the user will input numbers
 # user input will be written to numbers.txt
 
