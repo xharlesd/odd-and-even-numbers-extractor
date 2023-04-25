@@ -7,15 +7,18 @@ def user_input():
     # open numbers.txt (write)
     with open("numbers.txt", 'w') as input_file1:        
         while True:
+
             # the user will input numbers
-            user_input = input("Input number: ")
+            user_input = input(f"Enter a number: ")
 
             # if user input is a number
             if user_input.isnumeric():
 
                 # user input will be written to numbers.txt
                 input_file1.write(str(user_input) + '\n')
-            
+
+            # stop the loop
+
             # if user input is not a number
             else: 
                 print("Do you want to try again? ")
