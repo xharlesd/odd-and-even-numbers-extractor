@@ -31,7 +31,7 @@ def user_input():
         while True:
             try:
                 # the user will input numbers
-                user_input = int(input(Fore.CYAN + "\033[1m\t\tEnter a Number:  \033[0m"))
+                user_input = int(input(Fore.CYAN + "\033[1m\t\tEnter a Number:  \033[0m"  + Fore.YELLOW))
 
                 # user should only input whole numbers
                 if user_input >= 0:
@@ -40,7 +40,7 @@ def user_input():
                     continue
             except:
                 # If the user any letter to stop the program
-                print(Fore.GREEN + "\n\tExtracting odd and even numbers.......")
+                print(Fore.GREEN + "\n\t\t[Extracting odd and even numbers.........]")
                 time.sleep(3)
                 break
 
@@ -63,22 +63,23 @@ def main():
                 # odd numbers will be written to odd.txt
                 output_odd.write(str(extracted_number)+ "\n")
 
+
 def display():
     with open("numbers.txt", 'r') as input_file3, open("even.txt", 'r',) as output_even2,  open("odd.txt", 'r') as output_odd2:
             # print list of numbers from numbers.txt
             lst_numbers = [int(line) for line in input_file3.read().split()]
             lst_numbers.sort()
-            print("\n\tNumbers: ", lst_numbers)
+            print(Fore.YELLOW + "\033[1m\n\t\tNumbers:       \033[0m" + Fore.YELLOW, lst_numbers)
 
             # print list of even numbers
             lst_even = [int(line) for line in output_even2.read().split()]
             lst_even.sort()
-            print("\tEven Numbers: ", lst_even)
+            print(Fore.YELLOW + "\033[1m\t\tEven Numbers:  \033[0m" + Fore.YELLOW, lst_even)
             
             # print list of odd numbers
             lst_odd = [int(line) for line in output_odd2.read().split()]
             lst_odd.sort()
-            print("\tOdd Numbers: ", lst_odd, "\n")
+            print(Fore.YELLOW + "\033[1m\t\tOdd Numbers:   \033[0m" + Fore.YELLOW, lst_odd, "\n")
 
 # start
 intro()
