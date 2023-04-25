@@ -7,16 +7,31 @@ import time
 import pyfiglet
 from colorama import Fore, Style
 
+def intro():
+    # Use pyfiglet formatting to Assignment # 4"
+    print("")
+    lab = pyfiglet.figlet_format("ASSIGNMENT # 4", font = "banner3-d", width = 130, justify = "center")
+    print(Style.BRIGHT + Fore.CYAN + lab)
+
+    # format introductory message
+    print("\033[0;34m" + "\033[1m-" * 130 + '\033[0m')
+    intro = "INSTRUCTION: PLEASE INPUT WHOLE NUMBERS ONLY. TYPE ANY LETTER OR SYMBOL TO STOP." 
+    intro_centered = intro.center(130)
+    print( "\033[1m" + intro_centered) 
+    print("\033[0;34m" + "\033[1m-" * 130 + '\033[0m' + "\n")
+
+    # insert time delay
+    time.sleep(1.5)
+
+
 def user_input():
     # open numbers.txt (write)
     with open("numbers.txt", 'w') as input_file1:   
-        print()
-        print("INSTRUCTION: Please enter whole numbers only. Type any letter or symbol to stop. \n")     
 
         while True:
             try:
                 # the user will input numbers
-                user_input = int(input("\tEnter a number: "))
+                user_input = int(input(Fore.CYAN + "\033[1m\t\tEnter a Number:  \033[0m"))
 
                 # user should only input whole numbers
                 if user_input >= 0:
@@ -25,10 +40,9 @@ def user_input():
                     continue
             except:
                 # If the user any letter to stop the program
-                print("\n\tExtracting odd and even numbers....")
+                print(Fore.GREEN + "\n\tExtracting odd and even numbers.......")
                 time.sleep(3)
                 break
-
 
 def main():
 # open numbers.txt (read), even.txt(write), odd.txt(write)
@@ -67,6 +81,7 @@ def display():
             print("\tOdd Numbers: ", lst_odd, "\n")
 
 # start
+intro()
 user_input()
 main()
 display()
