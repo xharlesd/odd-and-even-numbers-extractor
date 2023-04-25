@@ -52,11 +52,12 @@ def main():
 
 def display():
     with open("numbers.txt", 'r') as input_file3, open("even.txt", 'r',) as output_even2,  open("odd.txt", 'w') as output_odd2:
-        """
-        """
+            # print list of numbers from numbers.txt
+            lst_numbers = [int(line) for line in input_file3.read().split()]
+            lst_numbers.sort()
+            print("\n\tNumbers: ", lst_numbers)
+            
 
-
-        
 # start
 user_input()
 main()
