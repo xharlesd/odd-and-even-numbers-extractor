@@ -3,32 +3,31 @@
 # This program reads a text file that contains a set of numbers. 
 # Then, the even and odd numbers will be extracted from the text file and will be transferred to separate files.
 
+import time
+
 def user_input():
     # open numbers.txt (write)
-    with open("numbers.txt", 'w') as input_file1:        
+    with open("numbers.txt", 'w') as input_file1:   
+
+        print("Please type 0 as your first number. Type any letter to stop.")     
+
         while True:
+            try:
+                # the user will input numbers
+                user_input = int(input("\tEnter a number: "))
 
-            # the user will input numbers
-            user_input = input("Enter a number, input 000 to stop: ")
+                # 
+                if user_input >= 0:
+                    # user input will be written to numbers.txt
+                    input_file1.write(str(user_input) + '\n')
+                    continue
 
-            # stop the loop
-            if user_input.strip() == "000":
-
-                # user input will be written to numbers.txt
-                input_file1.write(str(user_input) + '\n')
+            except:
+                # If the user any letter to stop the program
+                print("\nExtracting odd and even numbers....")
+                time.sleep(3)
                 break
 
-            # if user input is a number
-            elif user_input.isnumeric():
-
-                # user input will be written to numbers.txt
-                input_file1.write(str(user_input) + '\n')
-                continue
-
-            # if user input is not a number
-            else: 
-                print("Do you want to try again? ")
-                break
 
 def main():
 # open numbers.txt (read), even.txt(write), odd.txt(write)
@@ -37,7 +36,7 @@ def main():
         # read numbers.txt line by line
         for line in input_file2:  
             # convert each line from numbers.txt into integer
-            extracted_number = int(line) 
+            extracted_number = int(line)
 
             # print list of numbers from numbers.txt
             lst = [int(line) for line in input_file2.read().split()]
