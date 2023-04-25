@@ -9,7 +9,7 @@ with open("numbers.txt", 'w') as input_file1:
     user_input = input("Input number: ")
 
     # user input will be written to numbers.txt
-
+    input_file1.write(user_input)
 
 
 # open numbers.txt (read), even.txt(write), odd.txt(write)
