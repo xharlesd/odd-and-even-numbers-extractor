@@ -9,15 +9,21 @@ def user_input():
         while True:
 
             # the user will input numbers
-            user_input = input(f"Enter a number: ")
+            user_input = input("Enter a number, input 000 to stop: ")
 
-            # if user input is a number
-            if user_input.isnumeric():
+            # stop the loop
+            if user_input.strip() == "000":
 
                 # user input will be written to numbers.txt
                 input_file1.write(str(user_input) + '\n')
+                break
 
-            # stop the loop
+            # if user input is a number
+            elif user_input.isnumeric():
+
+                # user input will be written to numbers.txt
+                input_file1.write(str(user_input) + '\n')
+                continue
 
             # if user input is not a number
             else: 
@@ -44,7 +50,7 @@ def main():
 
                 # odd numbers will be written to odd.txt
                 output_odd.write(str(extracted_number)+ "\n")
-
+        
 # start
 user_input()
 main()
