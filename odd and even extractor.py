@@ -4,12 +4,14 @@
 # Then, the even and odd numbers will be extracted from the text file and will be transferred to separate files.
 
 import time
+import pyfiglet
+from colorama import Fore, Style
 
 def user_input():
     # open numbers.txt (write)
     with open("numbers.txt", 'w') as input_file1:   
-
-        print("INSTRUCTION: Please enter whole numbers only. Type any letter to stop. \n")     
+        print()
+        print("INSTRUCTION: Please enter whole numbers only. Type any letter or symbol to stop. \n")     
 
         while True:
             try:
@@ -21,7 +23,6 @@ def user_input():
                     # user input will be written to numbers.txt
                     input_file1.write(str(user_input) + '\n')
                     continue
-
             except:
                 # If the user any letter to stop the program
                 print("\n\tExtracting odd and even numbers....")
@@ -40,13 +41,11 @@ def main():
 
             # if the extracted number is even
             if extracted_number % 2 == 0:  
-                    
                 # even numbers will be written to even.txt
                 output_even.write(str(extracted_number)+ "\n")
 
             # else if the extracted number is odd
-            if extracted_number % 2 == 1: 
-
+            if extracted_number % 2 == 1:
                 # odd numbers will be written to odd.txt
                 output_odd.write(str(extracted_number)+ "\n")
 
