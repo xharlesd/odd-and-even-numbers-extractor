@@ -11,9 +11,10 @@ def user_input():
             user_input = input("Input number: ")
 
             # if user input is a number
-
-            # user input will be written to numbers.txt
-            input_file1.write(user_input)
+            if user_input.isnumeric():
+                
+                # user input will be written to numbers.txt
+                input_file1.write(user_input)
 
             # if user input is not a number
 
