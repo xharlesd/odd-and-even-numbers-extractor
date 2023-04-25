@@ -31,17 +31,12 @@ def user_input():
 
 def main():
 # open numbers.txt (read), even.txt(write), odd.txt(write)
-    with open("numbers.txt", 'r') as input_file2, open("even.txt", 'w+') as output_even,  open("odd.txt", 'w') as output_odd:
+    with open("numbers.txt", 'r') as input_file2, open("even.txt", 'w+',) as output_even,  open("odd.txt", 'w') as output_odd:
 
         # read numbers.txt line by line
         for line in input_file2:  
             # convert each line from numbers.txt into integer
             extracted_number = int(line)
-
-            # print list of numbers from numbers.txt
-            lst = [int(line) for line in input_file2.read().split()]
-            lst.sort()
-            print("\tNumbers: ", lst)
 
             # if the extracted number is even
             if extracted_number % 2 == 0:  
@@ -50,15 +45,22 @@ def main():
                 output_even.write(str(extracted_number)+ "\n")
 
             # else if the extracted number is odd
-            elif extracted_number % 2 == 1: 
+            if extracted_number % 2 == 1: 
 
                 # odd numbers will be written to odd.txt
                 output_odd.write(str(extracted_number)+ "\n")
+
+def display():
+    with open("numbers.txt", 'r') as input_file3, open("even.txt", 'r',) as output_even2,  open("odd.txt", 'w') as output_odd2:
+        """
+        """
+
+
         
 # start
 user_input()
 main()
-
+display()
 
 
 
