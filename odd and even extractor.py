@@ -39,6 +39,11 @@ def main():
             # convert each line from numbers.txt into integer
             extracted_number = int(line) 
 
+            # print list of numbers from numbers.txt
+            lst = [int(line) for line in input_file2.read().split()]
+            lst.sort()
+            print("Numbers: ", lst)
+
             # if the extracted number is even
             if extracted_number % 2 == 0:  
                     
