@@ -14,13 +14,13 @@ def user_input():
             if user_input.isnumeric():
 
                 # user input will be written to numbers.txt
-                input_file1.write(user_input)
-
+                input_file1.write(str(user_input) + '\n')
+            
             # if user input is not a number
             else: 
                 print("Do you want to try again? ")
-                exit()
-                
+                break
+
 def main():
 # open numbers.txt (read), even.txt(write), odd.txt(write)
     with open("numbers.txt", 'r') as input_file2, open("even.txt", 'w+') as output_even,  open("odd.txt", 'w') as output_odd:
