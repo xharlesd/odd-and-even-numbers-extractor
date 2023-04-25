@@ -38,9 +38,7 @@ def user_input():
                     # user input will be written to numbers.txt
                     input_file1.write(str(user_input) + '\n')
                     continue
-                if type(user_input) == float:
-                    print("We do not accept float")
-                    continue
+
             except:
                 # If the user any letter to stop the program
                 print(Fore.GREEN + "\n\t\t\t[Extracting odd and even numbers.........]")
