@@ -9,8 +9,13 @@ def user_input():
         while True:
             # the user will input numbers
             user_input = input("Input number: ")
+
+            # if user input is a number
+
             # user input will be written to numbers.txt
             input_file1.write(user_input)
+
+            # if user input is not a number
 
 def main():
 # open numbers.txt (read), even.txt(write), odd.txt(write)
@@ -33,6 +38,7 @@ def main():
                 # odd numbers will be written to odd.txt
                 output_odd.write(str(extracted_number)+ "\n")
 
+# start
 user_input()
 main()
 
