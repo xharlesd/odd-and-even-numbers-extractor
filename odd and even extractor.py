@@ -16,7 +16,7 @@ def user_input():
                 # the user will input numbers
                 user_input = int(input("\tEnter a number: "))
 
-                # 
+                # user should only input whole numbers
                 if user_input >= 0:
                     # user input will be written to numbers.txt
                     input_file1.write(str(user_input) + '\n')
@@ -51,7 +51,7 @@ def main():
                 output_odd.write(str(extracted_number)+ "\n")
 
 def display():
-    with open("numbers.txt", 'r') as input_file3, open("even.txt", 'r',) as output_even2,  open("odd.txt", 'w') as output_odd2:
+    with open("numbers.txt", 'r') as input_file3, open("even.txt", 'r',) as output_even2,  open("odd.txt", 'r') as output_odd2:
             # print list of numbers from numbers.txt
             lst_numbers = [int(line) for line in input_file3.read().split()]
             lst_numbers.sort()
@@ -65,7 +65,7 @@ def display():
             # print list of odd numbers
             lst_odd = [int(line) for line in output_odd2.read().split()]
             lst_odd.sort()
-            print("\tOdd Numbers: ", lst_odd)
+            print("\tOdd Numbers: ", lst_odd, "\n")
 
 # start
 user_input()
