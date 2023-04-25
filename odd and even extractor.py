@@ -9,7 +9,7 @@ def user_input():
     # open numbers.txt (write)
     with open("numbers.txt", 'w') as input_file1:   
 
-        print("INSTRUCTION: Please type 0 as your first number. Type any letter to stop.")     
+        print("INSTRUCTION: Please enter whole numbers only. Type any letter to stop. \n")     
 
         while True:
             try:
@@ -56,7 +56,16 @@ def display():
             lst_numbers = [int(line) for line in input_file3.read().split()]
             lst_numbers.sort()
             print("\n\tNumbers: ", lst_numbers)
+
+            # print list of even numbers
+            lst_even = [int(line) for line in output_even2.read().split()]
+            lst_even.sort()
+            print("\tEven Numbers: ", lst_even)
             
+            # print list of odd numbers
+            lst_odd = [int(line) for line in output_odd2.read().split()]
+            lst_odd.sort()
+            print("\tOdd Numbers: ", lst_odd)
 
 # start
 user_input()
